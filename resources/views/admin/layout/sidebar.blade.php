@@ -114,7 +114,7 @@
                     <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Info-circle">
                         </use>
-                    </svg><span>Danh mục</span>
+                    </svg><span> tài khoản</span>
                     <svg class="feather">
                         <use
                             href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
@@ -123,17 +123,17 @@
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="project-list.html">
+                        <a href="{{route('GetPageUser')}}">
                             <svg class="svg-menu">
                                 <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
-                            </svg>Project List</a>
+                            </svg>Người dùng</a>
                     </li>
-                    <li> <a href="projectcreate.html">
+                    <li> <a href="{{route('GetPageStaff')}}">
                             <svg class="svg-menu">
                                 <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
-                            </svg>Create New</a>
+                            </svg>Nhân viên</a>
                     </li>
                 </ul>
             </li>
@@ -149,11 +149,11 @@
             <li class="sidebar-list">
                 <svg class="pinned-icon">
                     <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
-                </svg><a class="sidebar-link" href="kanban-board.html">
+                </svg><a class="sidebar-link" href="{{route('GetNetWeight')}}">
                     <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Wallet">
+                        <use href="">
                         </use>
-                    </svg><span>Tài khoản</span></a>
+                    </svg><span>Khối lương sản phẩm</span></a>
             </li>
 
             <div class="right-arrow" id="right-arrow">

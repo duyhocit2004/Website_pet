@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Service\Auth\AuthService;
 use App\Service\User\UserService;
 use App\Service\Auth\IAuthService;
+use App\Service\NetWeight\INetWeight;
+use App\Service\NetWeight\NetWeight;
 use App\Service\product\IproductService;
 use App\Service\Product\ProductService;
 use App\Service\User\IUserService;
@@ -21,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IAuthService::class,AuthService::class);
         $this->app->bind(IUserService::class,UserService::class);
         $this->app->bind(IproductService::class,ProductService::class);
+        $this->app->bind(INetWeight::class,NetWeight::class);
         
     }
 

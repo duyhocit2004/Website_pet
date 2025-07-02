@@ -27,7 +27,7 @@ class ProductRepository
     public function GetAllProductPaginate(Request $request)
     {
         $perPage = 5;
-        $page = $request->input('page', 4);
+        $page = $request->input('page', 1);
 
         $query = Product::query()->orderByDesc('created_at')->where('status', 'appear');
         $total = $query->count();
