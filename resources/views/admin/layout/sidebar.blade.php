@@ -155,7 +155,15 @@
                         </use>
                     </svg><span>Khối lương sản phẩm</span></a>
             </li>
-
+             <li class="sidebar-list">
+                <svg class="pinned-icon">
+                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
+                </svg><a class="sidebar-link" href="{{route('GetListCategory')}}">
+                    <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Paper">
+                        </use>
+                    </svg><span>Thể loại</span></a>
+            </li>
             <div class="right-arrow" id="right-arrow">
                 <svg class="feather">
                     <use

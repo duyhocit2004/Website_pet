@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\admin\homeController;
@@ -64,5 +65,13 @@ Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
         Route::put('UnLockAcount/{id}', [userController::class, 'UnLockAcount'])->name('UnLockAcount');
         Route::get('DetailAcount/{id}', [userController::class, 'DetailAcount'])->name('DetailAcount');
         Route::put('UpdateAcount/{id}',[userController::class,'UpdateAccount'])->name('UpdateAccount');
+    });
+        Route::prefix('category')->group(function () {
+        Route::get('GetListCategory', [CategoryController::class, 'GetListCategory'])->name('GetListCategory');
+        Route::get('FormAddCategory', [CategoryController::class, 'FormAddCategory'])->name('FormAddCategory');
+        Route::post('AddCategory', [CategoryController::class, 'AddCategory'])->name('AddCategory');
+        Route::get('GetCategoryById/{id}', [CategoryController::class, 'GetCategoryById'])->name('GetCategoryById');
+        Route::put('UpdateCategoryById/{id}', [CategoryController::class, 'UpdateCategoryById'])->name('UpdateCategoryById');
+        Route::delete('DeleteCategory/{id}',[CategoryController::class,'DeleteCategory'])->name('DeleteCategory');
     });
 });

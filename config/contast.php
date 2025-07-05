@@ -5,5 +5,8 @@ return [
     'User' => 'user',
 
     'Lock' => 'lock',
-    'active' => 'active'
+    'active' => 'active',
+
+    'Main' => 'main',
+    
 ];

@@ -49,10 +49,10 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Danh sách thể loại</h4>
+                        <h4>Danh sách banner </h4>
                     </div>
                     <div class="card-header">
-                        <a href="{{route('FormAddCategory')}}" class="btn btn-primary">Thêm thể loại</a>
+                        <a href="{{route('FormAddCategory')}}" class="btn btn-primary">Thêm banner</a>
                     </div>
                     <div class="card-block row">
                         <div class="col-sm-12 col-lg-12 col-xl-12">
@@ -61,8 +61,8 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">STT</th>
-                                            <th scope="col">tên</th>
                                             <th scope="col">ảnh</th>
+                                            <th scope="col"></th>
                                             <th scope="col d-flex gap-2">Thao tác</th>
                                         </tr>
                                     </thead>

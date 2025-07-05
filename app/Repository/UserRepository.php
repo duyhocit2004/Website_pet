@@ -118,11 +118,7 @@ class UserRepository {
             }
           
         }else{
-            if($user->role == config('contast.User')){
                 return $this->notification->Error('GetPageUser','tài khoản không tồn tại');
-            }else{
-                return $this->notification->Error('GetPageStaff','tài khoản không tồn tại');
-            }
         }
--    }
+    }
 }

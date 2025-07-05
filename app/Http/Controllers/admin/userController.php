@@ -26,21 +26,22 @@ class userController extends Controller
 
     public function LockAcount($id)
     {
-        return $this->userService->LockAcount( $id);
+        return $this->userService->LockAcount($id);
     }
     public function UnLockAcount($id)
     {
-        return $this->userService->UnLockAcount( $id);
+        return $this->userService->UnLockAcount($id);
     }
     public function DetailAcount($id)
     {
         return $this->userService->DetailAcount($id);
     }
 
-    public function UpdateAccount(Request $request,$id){
-        return $this->userService->UpdateAccount($request,$id);
+    public function UpdateAccount(Request $request, $id)
+    {
+        return $this->userService->UpdateAccount($request, $id);
     }
-    
+
 
 
 
