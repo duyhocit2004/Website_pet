@@ -20,18 +20,18 @@ class BannerController extends Controller
         return $this->bannerService->GetAllBanner($request);
     }
     public function FormAddBanner(){
-
+        return $this->bannerService->FormAddBanner();
     }
     public function AddBanner(Request $request){
-
+        return $this->bannerService->AddBanner($request);   
     }
     public function GetBannerById($id){
-
+        return $this->bannerService->GetBannerById($id);
     }
     public function UpdateBannerById(Request $request,$id){
-
+        return $this->bannerService->UpdateBannerById($request,$id);
     }
     public function DeleteBannerById($id){
-
+        return $this->bannerService->DeleteBannerById($id);
     }
 }

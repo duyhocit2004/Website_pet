@@ -8,4 +8,7 @@ class Notification {
       public function Error($route,$title){
         return redirect()->route($route)->with('error',$title);
     }
+    // public function SuccesApi(){
+
+    // }
 }

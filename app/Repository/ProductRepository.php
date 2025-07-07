@@ -70,7 +70,7 @@ class ProductRepository
                 'discount' => $data['discount'] ?? 0,
                 'category_id' => (int) $data['category_id'],
                 'title' => $data['title'],
-                'description' => $data['description'] ?? '',
+                'descripton' => $data['descripton'] ?? '',
                 'image' => $fileImage,
                 'SKU' => $this->generateSKU(),
             ]);

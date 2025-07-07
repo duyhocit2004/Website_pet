@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
@@ -64,14 +65,22 @@ Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
         Route::put('LockAcount/{id}', [userController::class, 'LockAcount'])->name('LockAcount');
         Route::put('UnLockAcount/{id}', [userController::class, 'UnLockAcount'])->name('UnLockAcount');
         Route::get('DetailAcount/{id}', [userController::class, 'DetailAcount'])->name('DetailAcount');
-        Route::put('UpdateAcount/{id}',[userController::class,'UpdateAccount'])->name('UpdateAccount');
+        Route::put('UpdateAcount/{id}', [userController::class, 'UpdateAccount'])->name('UpdateAccount');
     });
-        Route::prefix('category')->group(function () {
+    Route::prefix('category')->group(function () {
         Route::get('GetListCategory', [CategoryController::class, 'GetListCategory'])->name('GetListCategory');
         Route::get('FormAddCategory', [CategoryController::class, 'FormAddCategory'])->name('FormAddCategory');
         Route::post('AddCategory', [CategoryController::class, 'AddCategory'])->name('AddCategory');
         Route::get('GetCategoryById/{id}', [CategoryController::class, 'GetCategoryById'])->name('GetCategoryById');
         Route::put('UpdateCategoryById/{id}', [CategoryController::class, 'UpdateCategoryById'])->name('UpdateCategoryById');
-        Route::delete('DeleteCategory/{id}',[CategoryController::class,'DeleteCategory'])->name('DeleteCategory');
+        Route::delete('DeleteCategory/{id}', [CategoryController::class, 'DeleteCategory'])->name('DeleteCategory');
+    });
+    Route::prefix('Banner')->group(function () {
+        Route::get('GetAllBanner', [BannerController::class, 'GetAllBanner'])->name('GetAllBanner');
+        Route::get('FormAddBanner', [BannerController::class, 'FormAddBanner'])->name('FormAddBanner');
+        Route::post('AddBanner', [BannerController::class, 'AddBanner'])->name('AddBanner');
+        Route::get('GetBannerById/{id}', [BannerController::class, 'GetBannerById'])->name('GetBannerById');
+        Route::put('UpdateBannerById/{id}', [BannerController::class, 'UpdateBannerById'])->name('UpdateBannerById');
+        Route::delete('DeleteBannerById/{id}', [BannerController::class, 'DeleteBannerById'])->name('DeleteBannerById');
     });
 });

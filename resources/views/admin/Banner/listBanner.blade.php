@@ -51,8 +51,29 @@
                     <div class="card-header">
                         <h4>Danh sách banner </h4>
                     </div>
-                    <div class="card-header">
-                        <a href="{{route('FormAddCategory')}}" class="btn btn-primary">Thêm banner</a>
+                    <div class="card-header ">
+                        <form action="{{route('GetAllBanner')}}" class="d-flex justify-content-end" style="height: 40px;" method="get">
+                            @csrf
+                            <div class="row col-3">
+                                <select name="status" class="form-control">
+                                    <option value="" hidden  selected>vai trò</option>
+                                    <option value="primary">Chính
+                                    </option>
+                                    <option value="secondary">Phụ</option>
+                                </select>
+                            </div>
+                            <div class="row col-3 mx-3">
+                                <select name="status" class="form-control">
+                                    <option value="" hidden  selected >trạng thái</option>
+                                    <option value="active">hoạt động
+                                    </option>
+                                    <option value="lock">Khóa</option>
+                                </select>
+                            </div>
+                            <div class="row " >
+                                <button class="btn btn-primary " >Tìm kiếm</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="card-block row">
                         <div class="col-sm-12 col-lg-12 col-xl-12">
@@ -61,23 +82,25 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">STT</th>
-                                            <th scope="col">ảnh</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Tiêu đề</th>
+                                            <th scope="col">video</th>
+                                            <th scope="col"> Trạng thái</th>
                                             <th scope="col d-flex gap-2">Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($NetWeight as $key => $lists)
+                                        @foreach ($Banner as $key => $lists)
                                             <tr>
                                                 <td  scope="row">{{$key +1}}</td>
-                                                <td>{{$lists->name}}</td>
-                                                <td><img src="{{$lists->image}}" alt="" width="150px"></td>
+                                                <td>{{$lists->title}}</td>
+                                                <td><video src="{{$lists->Link_video}}" width="150px" type="video/mp4"></video></td>
+                                                <th scope="col">{{$lists->status == config('contast.active') ? "hoạt động" : "không hoạt động"}}</th>
                                                 <td >
                                                     <div class="wizard-footer d-flex gap-2">
-                                                        <a href="{{route('GetCategoryById', $lists->id)}}"
+                                                        <a href="{{route('GetBannerById', $lists->id)}}"
                                                             class="btn alert-light-primary" id="backbtn">
                                                             Sửa</a>
-                                                        <form action="{{route('DeleteCategory', $lists->id)}}"
+                                                        <form action="{{route('DeleteBannerById', $lists->id)}}"
                                                             method="post">
                                                             @csrf
                                                             @method('DELETE')

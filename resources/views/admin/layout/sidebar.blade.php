@@ -155,7 +155,7 @@
                         </use>
                     </svg><span>Khối lương sản phẩm</span></a>
             </li>
-             <li class="sidebar-list">
+            <li class="sidebar-list">
                 <svg class="pinned-icon">
                     <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
                 </svg><a class="sidebar-link" href="{{route('GetListCategory')}}">
@@ -163,6 +163,38 @@
                         <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Paper">
                         </use>
                     </svg><span>Thể loại</span></a>
+            </li>
+            <li class="sidebar-list">
+                <svg class="pinned-icon">
+                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
+                </svg><a class="sidebar-link" href="javascript:void(0)">
+                    <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Info-circle">
+                        </use>
+                    </svg><span> Banner</span>
+                    <svg class="feather">
+                        <use
+                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
+                        </use>
+                    </svg></a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{route('GetAllBanner')}}">
+                            <svg class="svg-menu"> <use
+                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                                </use>
+                            </svg>Danh sách</a>
+                    </li>
+                    <li>
+                        <a href="{{route('FormAddBanner')}}">
+                            <svg class="svg-menu">
+                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                                </use>
+                            </svg>Thêm banner</a>
+                    </li>
+
+                </ul>
             </li>
             <div class="right-arrow" id="right-arrow">
                 <svg class="feather">
