@@ -21,7 +21,7 @@
                <div class="col-md-6">
                   <div class="sisf-e-media animated rotateInDownLeft">
                      <figure>
-                        <img src="images/pet_owner_img.png" class="w-100" alt="Pawly">
+                        <img src="{{asset('asset/images/pet_owner_img.png')}}" class="w-100" alt="Pawly">
                      </figure>
                   </div>
                </div>
@@ -29,13 +29,13 @@
                   <!-- Section Title Start -->
                   <div class="sisf-sis-section-title section-title animated slideInRight">
                      <h2 class="sisf-m-title">
-                        A Pet Owner's Paradise <i class="fa fa-paw"> </i>	
+                        Thiên đường của người nuôi thú cưng <i class="fa fa-paw"> </i>	
                      </h2>
                      <div class="sisf-m-text mb-4">
-                        <p>Eventum nobis nunc et leo urgeant eos etiam sint et vel stante at vel itaque iste modestia. Eventum nobis nunc et leo urgeant eos etiam sint et vel stante at vel itaque iste modestia. Eventum nobis nunc et leo urgeant eos etiam sint et vel stante at vel itaque iste modestia.</p>
+                        <p>Sự kiện đối với chúng ta bây giờ và Leo thúc giục họ cũng phải là và hoặc đứng ở hoặc do đó sự khiêm tốn này. Sự kiện đối với chúng ta bây giờ và Leo thúc giục họ cũng phải là và hoặc đứng ở hoặc do đó sự khiêm tốn này. Sự kiện đối với chúng ta bây giờ và Leo thúc giục họ cũng phải là và hoặc đứng ở hoặc do đó sự khiêm tốn này.</p>
                      </div>
                      <div class="sisf-m-button">
-                        <a href="shop.html" class="btn-default sisf-hover-reveal">Shop Now</a>
+                        <a href="shop.html" class="btn-default sisf-hover-reveal">Mua ngay</a>
                      </div>
                   </div>
                   <!-- Section Title End -->
@@ -44,32 +44,32 @@
                         <div class="sisf-icon-list-item sisf-icon--custom-icon animated slideInRight">
                            <h5 class="sisf-e-title">
                               <span class="sisf-e-title-inner">
-                              <img src="images/right_mark.png" alt="Pawly">				
-                              <span class="sisf-e-title-text ms-4">Quality Products</span>
+                              <img src="{{asset('asset/images/right_mark.png')}}" alt="Pawly">				
+                              <span class="sisf-e-title-text ms-4">Số lượng sản phẩm</span>
                               </span>
                            </h5>
                         </div>
                         <div class="sisf-icon-list-item sisf-icon--custom-icon animated slideInRight">
                            <h5 class="sisf-e-title">
                               <span class="sisf-e-title-inner">
-                              <img src="images/right_mark.png" alt="Pawly">				
-                              <span class="sisf-e-title-text ms-4">24/7 Support</span>
+                              <img src="{{asset('asset/images/right_mark.png')}}" alt="Pawly">				
+                              <span class="sisf-e-title-text ms-4">Hỗ trợ 24/7</span>
                               </span>
                            </h5>
                         </div>
                         <div class="sisf-icon-list-item sisf-icon--custom-icon animated slideInRight">
                            <h5 class="sisf-e-title">
                               <span class="sisf-e-title-inner">
-                              <img src="images/right_mark.png" alt="Pawly">				
-                              <span class="sisf-e-title-text ms-4">Free Shipping</span>
+                              <img src="{{asset('asset/images/right_mark.png')}}" alt="Pawly">				
+                              <span class="sisf-e-title-text ms-4">Miễn phí giao hàng</span>
                               </span>
                            </h5>
                         </div>
                         <div class="sisf-icon-list-item sisf-icon--custom-icon animated slideInRight mb-0">
                            <h5 class="sisf-e-title">
                               <span class="sisf-e-title-inner">
-                              <img src="images/right_mark.png" alt="Pawly">				
-                              <span class="sisf-e-title-text ms-4">30 Day Return</span>
+                              <img src="{{asset('asset/images/right_mark.png')}}" alt="Pawly">				
+                              <span class="sisf-e-title-text ms-4">Hoàn trả 4 ngày</span>
                               </span>
                            </h5>
                         </div>
@@ -78,12 +78,12 @@
                         <div class="right-bottom-img wow fadeInUp">
                            <div class="img">
                               <figure>
-                                 <img src="images/pet_owner_img1-1.png" class="w-100" alt="Pawly">
+                                 <img src="{{asset('asset/images/pet_owner_img1-1.png')}}" class="w-100" alt="Pawly">
                               </figure>
                            </div>
                            <div class="circle-img">
                               <figure>
-                                 <img src="images/pet_owner_round.png" class="spin-img" alt="Pawly">
+                                 <img src="{{asset('asset/images/pet_owner_round.png')}}" class="spin-img" alt="Pawly">
                               </figure>
                            </div>
                         </div>
@@ -717,236 +717,8 @@
             <div class="row">
                <div class="sisf-sis-category-slider">
                   <div class="swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Bird</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-1.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Accessories</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left" href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-2.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Fish</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-3.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Dog</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-4.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Cat</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-5.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Bird</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-1.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Accessories</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-2.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Fish</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-3.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Dog</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-4.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="sisf-e-inner">
-                              <div class="sisf-e-content-holder text-center">
-                                 <div class="sisf-e-title sisf-item-content">
-                                    <h4 class="sisf-e-title">
-                                       <a href="shop.html">Cat</a>
-                                    </h4>
-                                 </div>
-                                 <div class="sisf-category-button sisf-item-content mb-3">
-                                    <a class="sisf-sis-button sisf-text-underline sisf-underline--left " href="shop.html">	
-                                    <span class="sisf-m-text">Shop Now</span>	
-                                    </a>	
-                                 </div>
-                              </div>
-                              <div class="sisf-e-images-holder">
-                                 <div class="sisf-e-main-image text-center">
-                                    <a href="shop.html">
-                                    <img src="images/category-img-5.png" alt="Pawly">           
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
+                     <div class="swiper-wrapper" id="Category">
+
                         </div>
                      </div>
                   </div>
@@ -1984,8 +1756,8 @@
       <!-- Product Categories List Section End -->
       <!-- Background Video Section Start --> 
       <div class="video-section position-relative">
-         <div class="container-fluid">
-            <div class="row">
+         <div class="container-fluid" id="renderBannerSecondary">
+            {{-- <div class="row">
                <div class="col-lg-12 col-md-12 p-0">
                   <div class="intro-video-box">
                      <video class="bg-video" autoplay loop muted>
@@ -2006,17 +1778,17 @@
                      <!-- Section Title End --> 
                      <div class="wave-img-bottom">
                         <figure>
-                           <img src="images/pawly-Mask-group-white.png" alt="Pawly">	
+                           <img src="{{asset('asset/images/pawly-Mask-group-white.png')}}" alt="Pawly">	
                         </figure>
                      </div>
                      <div class="wave-img-top">
                         <figure>
-                           <img src="images/pawly-Mask-group-white-top.png" alt="Pawly">	
+                           <img src="{{asset('asset/images/pawly-Mask-group-white-top.png')}}" alt="Pawly">	
                         </figure>
                      </div>
                   </div>
                </div>
-            </div>
+            </div> --}}
          </div>
       </div>
       <!--  Background Video Section End -->

@@ -43,3 +43,4 @@
                   toastr.error("{{ session('error') }}");
             @endif
       </script>
+        <script  src="{{asset('JSClient/JSBanner.js')}}"></script>

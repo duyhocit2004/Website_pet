@@ -13,7 +13,7 @@
                             @method('POST')
                             <div class="col-md-12 position-relative">
                                 <label class="form-label" for="title">Tiêu đề</label>
-                                <input class="form-control" id="title" name="title" value="{{old('title',$GetBanner->title)}}" type="text">
+                                <input class="form-control" id="title" name="title" value="{{old('title')}}" type="text">
                                 <div class="valid-tooltip">@error('title')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
@@ -21,16 +21,15 @@
                             </div>
                             <div class="col-md-4 position-relative">
                                 <label class="form-label" for="Link_video">Video</label>
-                                <input class="form-control" name="Link_video" id="Link_video" type="file" value="{{old('Link_video',$GetBanner->)}}">
-                                <div class="valid-tooltip">@error('Link_video')
+                                <input class="form-control" name="Link_video" id="Link_video" type="file" value="{{old('Link_video')}}">
+                                @error('Link_video')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
-                                </div>
                             </div>
                             <div class="col-md-4 position-relative">
                                 <label class="form-label" for="status">Trạng thái</label>
                                 <select class="form-select" name="status" id="status" required="">
-                                    <option hidden value="">Trạng thái</option>
+                                    <option hidden re value="">Trạng thái</option>
                                     <option value="active">hoạt động</option>
                                     <option value="lock">Không hoạt động</option>
                                 </select>

@@ -78,10 +78,16 @@ class CategoryRepository
 
             // kiểm tra giá trị đã tồn tại hay chưa
             $name = mb_strtolower($request->input('name'));
-            $check = Category::whereRaw('name = ?', [$name])->exists();
-            if ($check) {
-                return $this->notification->Error('GetListCategory', " đã tồn tại");
+            
+            
+                if($GetByid->name !== $name){
+                    $check = Category::whereRaw('name = ?', [$name])->exists();
+                    if ($check) {
+                    return $this->notification->Error('GetListCategory', " đã tồn tại");
+                }
             }
+            
+           
 
             //lưu ảnh vào phần mềm thứ 3
             if ($request->hasFile('image')) {
