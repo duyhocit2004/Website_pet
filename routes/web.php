@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\admin\BannerController;
-use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\admin\homeController;
-use App\Http\Controllers\admin\productController;
-use App\Http\Controllers\admin\NetWeightController;
 use App\Http\Controllers\admin\userController;
+use App\Http\Controllers\admin\BannerController;
+use App\Http\Controllers\admin\productController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\NetWeightController;
+use App\Http\Controllers\client\SearchProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,9 @@ Route::get('handleFacebookCallback', [AuthController::class, 'handleFacebookCall
 
 Route::get('redirectToBitbucket', [AuthController::class, 'redirectToBitbucket'])->name('redirectToBitbucket');
 Route::get('handleBitbucketCallback', [AuthController::class, 'handleBitbucketCallback']);
+
+Route::get('pageSreach',[SearchProductController::class,'pageSreach'])->name('pageSreach');
+
 
 Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
     Route::get('home', [homeController::class, 'index'])->name('homeAdmin');

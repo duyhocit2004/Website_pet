@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\mainController;
+use App\Http\Controllers\client\SearchProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('Allbanner',[mainController::class,'getAllproduct']);
 Route::get('GetListFeaturedProducts',[mainController::class,'GetListFeaturedProducts']);
 Route::get('ShopbyCategories',[mainController::class,'ShopbyCategories']);
 Route::get('Bannersecondary',[mainController::class,'Bannersecondary']);
+
+Route::get('Sreachproduct',[SearchProductController::class,'GetAllProduct']);
 
 
 

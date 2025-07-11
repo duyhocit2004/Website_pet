@@ -44,3 +44,4 @@
             @endif
       </script>
         <script  src="{{asset('JSClient/JSBanner.js')}}"></script>
+      @yield('js')

@@ -125,7 +125,7 @@
                                     <div class="sisf-product-image">
                                        <a href="shop-single.html">
                                           <figure>
-                                             <img src="images/product1.png" class="image-fluid" alt="Pawly">
+                                             <img src="{{asset('asset/images/product1.png')}}" class="image-fluid" alt="Pawly">
                                           </figure>
                                        </a>
                                        <div class="heart-icon">

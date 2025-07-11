@@ -13,6 +13,8 @@ use App\Service\Product\ProductService;
 use App\Service\product\IproductService;
 use App\Service\Category\CategoryService;
 use App\Service\Category\ICategoryService;
+use App\Service\SearchProduct\ISearchProductService;
+use App\Service\SearchProduct\SearchProduct;
 use SocialiteProviders\Manager\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IproductService::class,ProductService::class);
         $this->app->bind(INetWeight::class,NetWeight::class);
         $this->app->bind(ICategoryService::class , CategoryService::class);
-        
+        $this->app->bind(ISearchProductService::class,SearchProduct::class);
     }
 
     /**
