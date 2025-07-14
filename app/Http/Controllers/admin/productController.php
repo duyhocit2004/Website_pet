@@ -9,29 +9,36 @@ use App\Service\product\IproductService;
 
 class productController extends Controller
 {
-        public IproductService $product ;
-        public function __construct(productService $product){
-                $this->product=$product;
+        public IproductService $product;
+        public function __construct(productService $product)
+        {
+                $this->product = $product;
         }
-        
-        public function GetAllProductPaginate(Request $request){
-                return  $this->product->GetAllProductPaginate($request);
-                 
+
+        public function GetAllProductPaginate(Request $request)
+        {
+                return $this->product->GetAllProductPaginate($request);
+
         }
-        public function FormAddProduct(){
-                 return  $this->product->FormAddProduct();
+        public function FormAddProduct()
+        {
+                return $this->product->FormAddProduct();
         }
-        public function postAddProduct(Request $request){
-                
+        public function postAddProduct(Request $request)
+        {
+
                 return $this->product->postAddProduct($request);
         }
-        public function GetProductById($id){
+        public function GetProductById($id)
+        {
                 return $this->product->GetProductById($id);
         }
-        public function UpdateProductById(Request $request,$id){
-                return $this->product->UpdateProductById($id,$request);
+        public function UpdateProductById(Request $request, $id)
+        {
+                return $this->product->UpdateProductById($id, $request);
         }
-        public function DeleteProductById($id){
+        public function DeleteProductById($id)
+        {
                 return $this->product->DeleteProductById($id);
         }
 }

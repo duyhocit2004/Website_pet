@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\admin\homeController;
 use App\Http\Controllers\admin\userController;
+use App\Http\Controllers\client\CartController;
 use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\NetWeightController;
+use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
 
 /*
@@ -43,6 +45,8 @@ Route::get('redirectToBitbucket', [AuthController::class, 'redirectToBitbucket']
 Route::get('handleBitbucketCallback', [AuthController::class, 'handleBitbucketCallback']);
 
 Route::get('pageSreach',[SearchProductController::class,'pageSreach'])->name('pageSreach');
+Route::get('productDetail/{id}',[DetailProductController::class,'DetailProduct'])->name('DetailProduct');
+Route::post('AddCart',[CartController::class,'AddCart'])->name('AddCart');
 
 
 Route::prefix('admin')->middleware(['auth.admin'])->group(function () {

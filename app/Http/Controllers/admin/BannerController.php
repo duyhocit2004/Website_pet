@@ -11,27 +11,34 @@ use App\Service\Banner\BannerService;
 class BannerController extends Controller
 {
     public IBannerService $bannerService;
-    
-    public function __construct(BannerService $bannerService){
+
+    public function __construct(BannerService $bannerService)
+    {
         $this->bannerService = $bannerService;
     }
 
-    public function GetAllBanner(Request $request){
+    public function GetAllBanner(Request $request)
+    {
         return $this->bannerService->GetAllBanner($request);
     }
-    public function FormAddBanner(){
+    public function FormAddBanner()
+    {
         return $this->bannerService->FormAddBanner();
     }
-    public function AddBanner(Request $request){
-        return $this->bannerService->AddBanner($request);   
+    public function AddBanner(Request $request)
+    {
+        return $this->bannerService->AddBanner($request);
     }
-    public function GetBannerById($id){
+    public function GetBannerById($id)
+    {
         return $this->bannerService->GetBannerById($id);
     }
-    public function UpdateBannerById(Request $request,$id){
-        return $this->bannerService->UpdateBannerById($request,$id);
+    public function UpdateBannerById(Request $request, $id)
+    {
+        return $this->bannerService->UpdateBannerById($request, $id);
     }
-    public function DeleteBannerById($id){
+    public function DeleteBannerById($id)
+    {
         return $this->bannerService->DeleteBannerById($id);
     }
 }

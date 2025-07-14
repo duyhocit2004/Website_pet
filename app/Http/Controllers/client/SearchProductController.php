@@ -12,26 +12,32 @@ class SearchProductController extends Controller
 
     public ISearchProductService $SearchProduct;
 
-    public function __construct(SearchProduct $SearchProduct ){
+    public function __construct(SearchProduct $SearchProduct)
+    {
         $this->SearchProduct = $SearchProduct;
 
     }
 
-    public function pageSreach(){
+    public function pageSreach()
+    {
         return view('client.SreachProduct.sreachproduct');
     }
 
-     public function GetAllProduct(Request $request){
+    public function GetAllProduct(Request $request)
+    {
         return $this->SearchProduct->GetAllProduct($request);
-     }
-    public function GetPrice(Request $request){
+    }
+    public function GetPrice(Request $request)
+    {
         return $this->SearchProduct->GetPrice($request);
     }
-    public function GetProductByCategory(Request $request){
+    public function GetProductByCategory(Request $request)
+    {
         return $this->SearchProduct->GetProductByCategory($request);
     }
 
-    public function GetProductByCategoryWithPrice(Request $request){
+    public function GetProductByCategoryWithPrice(Request $request)
+    {
         return $this->SearchProduct->GetProductByCategoryWithPrice($request);
     }
 }

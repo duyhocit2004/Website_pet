@@ -13,9 +13,10 @@ class AuthController extends Controller
     public $authService;
     public function __construct(AuthService $authService)
     {
-         $this->authService = $authService;
+        $this->authService = $authService;
     }
-    public function formlogin(){
+    public function formlogin()
+    {
         return view('client.login.login');
     }
     public function login(Request $request)
@@ -23,7 +24,8 @@ class AuthController extends Controller
         return $this->authService->login($request);
         //  redirect()->route('home')->with('success','Bạn đã đăng nhập thành công');
     }
-    public function formLoginAdmin(){
+    public function formLoginAdmin()
+    {
         return view('admin.Auth.LoginAdmin');
     }
     public function loginAdmin(Request $request)
@@ -31,21 +33,25 @@ class AuthController extends Controller
         // dd($request->all());
         return $this->authService->loginAdmin($request);
     }
-    public function formRegister(){
+    public function formRegister()
+    {
         return view('client.login.register');
     }
     public function register(Request $request)
-    {   
+    {
         $this->authService->register($request);
-        return redirect()->route('formLogin')->with('success','Bạn đã đăng ký thành công');
+        return redirect()->route('formLogin')->with('success', 'Bạn đã đăng ký thành công');
     }
-    public function formForgotPassword(){
+    public function formForgotPassword()
+    {
         return view('client.login.forgotpassword');
     }
-    public function forgotPassword(Request $request){
+    public function forgotPassword(Request $request)
+    {
         return $this->authService->ForgotPassword($request);
     }
-    public function logout(){
+    public function logout()
+    {
         return $this->authService->logout();
     }
     public function redirectToGoogle()
@@ -56,16 +62,20 @@ class AuthController extends Controller
     {
         return $this->authService->handleGoogleCallback();
     }
-    public function redirectToFacebook(){
+    public function redirectToFacebook()
+    {
         return $this->authService->redirectToFacebook();
     }
-    public function handleFacebookCallback(){
+    public function handleFacebookCallback()
+    {
         return $this->authService->handleFacebookCallback();
     }
-    public function redirectToBitbucket(){
+    public function redirectToBitbucket()
+    {
         return $this->authService->redirectToBitbucket();
     }
-    public function handleBitbucketCallback(){
+    public function handleBitbucketCallback()
+    {
         return $this->authService->handleBitbucketCallback();
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\mainController;
+use App\Http\Controllers\API\AllVariantController;
 use App\Http\Controllers\client\SearchProductController;
 
 /*
@@ -25,6 +26,7 @@ Route::get('ShopbyCategories',[mainController::class,'ShopbyCategories']);
 Route::get('Bannersecondary',[mainController::class,'Bannersecondary']);
 
 Route::get('Sreachproduct',[SearchProductController::class,'GetAllProduct']);
+Route::get('productVariant/{id}',[AllVariantController::class,'GetAllVariantProduct']);
 
 
 
