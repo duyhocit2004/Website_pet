@@ -196,6 +196,54 @@
 
                 </ul>
             </li>
+             <li class="sidebar-list">
+                <svg class="pinned-icon">
+                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
+                </svg><a class="sidebar-link" href="javascript:void(0)">
+                    <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Info-circle">
+                        </use>
+                    </svg><span> Đơn hàng</span>
+                    <svg class="feather">
+                        <use
+                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
+                        </use>
+                    </svg></a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{route('GetAllOrder')}}">
+                            <svg class="svg-menu"> <use
+                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                                </use>
+                            </svg>Danh sách</a>
+                    </li>
+                </ul>
+            </li>
+             <li class="sidebar-list">
+                <svg class="pinned-icon">
+                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
+                </svg><a class="sidebar-link" href="javascript:void(0)">
+                    <svg class="stroke-icon">
+                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Info-circle">
+                        </use>
+                    </svg><span> Mã giảm giá</span>
+                    <svg class="feather">
+                        <use
+                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
+                        </use>
+                    </svg></a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{route('GetAllOrder')}}">
+                            <svg class="svg-menu"> <use
+                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                                </use>
+                            </svg>Danh sách</a>
+                    </li>
+                </ul>
+            </li>
             <div class="right-arrow" id="right-arrow">
                 <svg class="feather">
                     <use

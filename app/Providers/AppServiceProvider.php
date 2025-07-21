@@ -15,6 +15,8 @@ use App\Service\Product\ProductService;
 use App\Service\product\IproductService;
 use App\Service\Category\CategoryService;
 use App\Service\Category\ICategoryService;
+use App\Service\Order\IOrderService;
+use App\Service\Order\OrderService;
 use App\Service\SearchProduct\SearchProduct;
 use SocialiteProviders\Manager\ServiceProvider;
 use App\Service\SearchProduct\ISearchProductService;
@@ -33,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ICategoryService::class , CategoryService::class);
         $this->app->bind(ISearchProductService::class,SearchProduct::class);
         // $this->app->bind(IClientService::class,ClientService::class);
+        $this->app->bind(IOrderService::class,OrderService::class);
     }   
 
     /**

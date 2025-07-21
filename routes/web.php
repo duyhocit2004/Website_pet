@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\NetWeightController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
 
@@ -90,5 +91,17 @@ Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
         Route::get('GetBannerById/{id}', [BannerController::class, 'GetBannerById'])->name('GetBannerById');
         Route::put('UpdateBannerById/{id}', [BannerController::class, 'UpdateBannerById'])->name('UpdateBannerById');
         Route::delete('DeleteBannerById/{id}', [BannerController::class, 'DeleteBannerById'])->name('DeleteBannerById');
+    });
+    Route::prefix('Order')->group(function (){
+        Route::get('GetAllOrder', [OrderController::class, 'GetAllOrder'])->name('GetAllOrder');
+        Route::get('GetDetailOrder/{id}', [OrderController::class, 'GetDetailOrder'])->name('GetDetailOrder');
+        Route::put('UpdateOrder/{id}', [OrderController::class, 'UpdateOrder'])->name('UpdateOrder');
+        Route::delete('GetFormAdd/{id}', [OrderController::class, 'GetFormAdd'])->name('GetFormAdd');
+    });
+    Route::prefix('Voucher')->group(function (){
+        Route::get('GetAllOrder', [OrderController::class, 'GetAllOrder'])->name('GetAllOrder');
+        Route::get('GetDetailOrder/{id}', [OrderController::class, 'GetDetailOrder'])->name('GetDetailOrder');
+        Route::put('UpdateOrder/{id}', [OrderController::class, 'UpdateOrder'])->name('UpdateOrder');
+        Route::delete('GetFormAdd/{id}', [OrderController::class, 'GetFormAdd'])->name('GetFormAdd');
     });
 });

@@ -498,7 +498,7 @@
         function validateQuantity() {
           const quantity = parseInt($('input[name=quantity]').val());
           if (quantity > currentStock) {
-            $('.sisf-quantity-input').attr('disabled', true);
+            $('.sisf-quantity-input').attr('disabled', false);
           } else {
             $('.sisf-quantity-input').removeAttr('disabled');
           }
