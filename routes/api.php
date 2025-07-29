@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\mainController;
 use App\Http\Controllers\API\AllVariantController;
 use App\Http\Controllers\client\SearchProductController;
+use App\Http\Controllers\admin\DoashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,26 @@ Route::get('Bannersecondary',[mainController::class,'Bannersecondary']);
 
 Route::get('Sreachproduct',[SearchProductController::class,'GetAllProduct']);
 Route::get('productVariant/{id}',[AllVariantController::class,'GetAllVariantProduct']);
+
+Route::get('TotalOrdersPendingConfirmation',[DoashboardController::class,'TotalOrdersPendingConfirmation']);
+Route::get('TotalConfirmedOrders',[DoashboardController::class,'TotalConfirmedOrders']);
+Route::get('TotalOrdersInTransit',[DoashboardController::class,'TotalOrdersInTransit']);
+Route::get('TotalCancelledOrders',[DoashboardController::class,'TotalCancelledOrders']);
+
+Route::get('getRealTimeRevenue',[DoashboardController::class,'getRealTimeRevenue']);
+
+Route::get('CountActiveUsers',[DoashboardController::class,'CountActiveUsers']);
+Route::get('CountOrderInOneDay',[DoashboardController::class,'CountOrderInOneDay']);
+
+Route::get('check-timezone', function () { 
+    return response()->json([
+        'Laravel config timezone' => config('app.timezone'),
+        'PHP default timezone' => date_default_timezone_get(),
+        'Carbon default' => \Carbon\Carbon::now()->toDateTimeString(),
+        'Explicit VN' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh')->toDateTimeString(),
+    ]);
+});
+
 
 
 

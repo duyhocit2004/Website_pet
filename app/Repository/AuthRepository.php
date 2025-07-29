@@ -30,8 +30,12 @@ class AuthRepository
         //     'password' => 12345678,
         // ];
         if (Auth::attempt($credentials)) {
-            // dd(Auth::user());
+            $user = Auth::user();
+            $findUser = User::Where('email', $user->email)->first();
             if (Auth::user()->role === config('contast.User')) {
+                $findUser->update([
+                    'status' => config('contast.active')
+                ]);
                 return redirect()->route('home')->with('success', 'Bạn đã đăng nhập thành công');
             } else {
                 Auth::logout(); // Không đúng quyền
@@ -44,18 +48,18 @@ class AuthRepository
     }
     public function loginAdmin($request)
     {
-        
+
         $credentials = $request->only('email', 'password');
         // dd(Auth::attempt($credentials));
         if (Auth::attempt($credentials)) {
-            
+
             if (Auth::user()->role === config('contast.Admin')) {
-                return redirect('admin/home')->with('success', 'Bạn đã đăng nhập thành công');
+                return redirect('admin/DoashBoard')->with('success', 'Bạn đã đăng nhập thành công');
             } else {
                 Auth::logout(); // Không đúng quyền
                 return redirect()->route('formLoginAdmin')->with('error', 'Tài khoản không có quyền truy cập');
             }
-        }else{
+        } else {
             return redirect()->route('formLoginAdmin')->with('error', 'Tài khoản hoặc mật khẩu bị sai');
         }
     }
@@ -72,6 +76,11 @@ class AuthRepository
 
     public function logout()
     {
+        $user = Auth::user();
+        $findUser = User::where('email', $user->email)->first();
+        $findUser->update([
+            'status' => config('contast.inactive')
+        ]);
         Auth::logout();
         return redirect()->route('home')->with('success', 'Bạn đã đăng xuất thành công');
     }
@@ -111,7 +120,7 @@ class AuthRepository
                     'email' => $user->getEmail(),
                     'password' => Hash::make($password),
                 ]);
-                
+
                 Mail::to($newUser->email)->send(new MailGoogle($password));
 
                 Auth::login($newUser);
@@ -161,7 +170,7 @@ class AuthRepository
     {
         return Socialite::driver('bitbucket')->redirect();
     }
-    public function handleBitbucketCallback ()
+    public function handleBitbucketCallback()
     {
         try {
             $user = Socialite::driver('bitbucket')->user();

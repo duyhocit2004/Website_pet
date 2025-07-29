@@ -19,7 +19,7 @@
                     <svg class="stroke-icon">
                         <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Home">
                         </use>
-                    </svg><span>Dashboard</span>
+                    </svg><span>bảng điều khiển</span>
                     <div class="badge badge-primary rounded-pill">3</div>
                     <svg class="feather">
                         <use
@@ -28,82 +28,16 @@
                     </svg>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li><a href="index.html">
+                    <li><a href="{{route("homeAdmin")}}">
                             <svg class="svg-menu">
                                 <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
-                            </svg>Default</a></li>
-                    <li><a href="dashboard-02.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>Ecommerce</a></li>
-                    <li><a href="dashboard-03.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>Project</a></li>
+                            </svg>Thống kê</a></li>
+                   
                 </ul>
             </li>
 
-            <li class="sidebar-list">
-                <svg class="pinned-icon">
-                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
-                </svg><a class="sidebar-link" href="javascript:void(0)">
-                    <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pie">
-                        </use>
-                    </svg><span>Widgets</span>
-                    <svg class="feather">
-                        <use
-                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
-                        </use>
-                    </svg></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="general-widget.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>General</a></li>
-                    <li><a href="chart-widget.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>Chart</a></li>
-                </ul>
-            </li>
-
-            <li class="sidebar-list">
-                <svg class="pinned-icon">
-                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
-                </svg><a class="sidebar-link" href="javascript:void(0)">
-                    <svg class="stroke-icon">
-                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Document">
-                        </use>
-                    </svg><span>Page Layout</span>
-                    <svg class="feather">
-                        <use
-                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#chevron-right">
-                        </use>
-                    </svg></a>
-                <ul class="sidebar-submenu">
-                    <li>
-                        <a href="box-layout.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>Box Layout</a><a href="layout-rtl.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>RTL</a><a href="layout-dark.html">
-                            <svg class="svg-menu">
-                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
-                                </use>
-                            </svg>Dark</a>
-                    </li>
-                </ul>
-            </li>
+            
 
             <li class="line"> </li>
             <li class="sidebar-main-title">Danh sách</li>
@@ -181,8 +115,8 @@
                 <ul class="sidebar-submenu">
                     <li>
                         <a href="{{route('GetAllBanner')}}">
-                            <svg class="svg-menu"> <use
-                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                            <svg class="svg-menu">
+                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
                             </svg>Danh sách</a>
                     </li>
@@ -196,7 +130,7 @@
 
                 </ul>
             </li>
-             <li class="sidebar-list">
+            <li class="sidebar-list">
                 <svg class="pinned-icon">
                     <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
                 </svg><a class="sidebar-link" href="javascript:void(0)">
@@ -213,14 +147,14 @@
                 <ul class="sidebar-submenu">
                     <li>
                         <a href="{{route('GetAllOrder')}}">
-                            <svg class="svg-menu"> <use
-                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                            <svg class="svg-menu">
+                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
                             </svg>Danh sách</a>
                     </li>
                 </ul>
             </li>
-             <li class="sidebar-list">
+            <li class="sidebar-list">
                 <svg class="pinned-icon">
                     <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Pin"></use>
                 </svg><a class="sidebar-link" href="javascript:void(0)">
@@ -236,11 +170,18 @@
 
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{route('GetAllOrder')}}">
-                            <svg class="svg-menu"> <use
-                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                        <a href="{{route('getAllVoucher')}}">
+                            <svg class="svg-menu">
+                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
                                 </use>
                             </svg>Danh sách</a>
+                    </li>
+                    <li>
+                        <a href="{{route('FormAddVoucher')}}">
+                            <svg class="svg-menu">
+                                <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#right-3">
+                                </use>
+                            </svg>Thêm Phiếu Giảm</a>
                     </li>
                 </ul>
             </li>

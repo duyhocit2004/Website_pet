@@ -82,41 +82,41 @@ class OrderRepository
     public function UpdateOrder($id, Request $request)
     {
         try {
-            
-            $OrderOld = Order::findOrFail($id);
-            $order_status_old = StatusOrder::where('id',$OrderOld->status_order_id)->value('name');
-            $status_old = PaymenStatus::Where('id',$OrderOld->payment_status_id)->value('name');
 
-           
+            $OrderOld = Order::findOrFail($id);
+            $order_status_old = StatusOrder::where('id', $OrderOld->status_order_id)->value('name');
+            $status_old = PaymenStatus::Where('id', $OrderOld->payment_status_id)->value('name');
+
+
 
             $user = Auth::user();
 
             $statusNew = StatusOrder::where('id', $request->input('status_order_id'))->value('name');
             $PaymenStatusNew = PaymenStatus::where('id', $request->input('payment_status_id'))->value('name');
-            
-        
+
+
             $OrderOld->update([
                 'status_order_id' => $request->input('status_order_id'),
                 'payment_status_id' => $request->input('payment_status_id')
             ]);
-               
-           
 
-            
-            if ($OrderOld->payment_method_id == 1 && $OrderOld->status_order_id == 4 && $OrderOld->payment_status_id == 1 ) {
-                $OrderOld->update([ 
+
+
+
+            if ($OrderOld->payment_method_id == 1 && $OrderOld->status_order_id == 4 && $OrderOld->payment_status_id == 1) {
+                $OrderOld->update([
                     'payment_status_id' => 2
                 ]);
-                 
-               HistoryPaymentStatus::create([
+
+                HistoryPaymentStatus::create([
                     'Order_id' => $id,
                     'status_old' => $status_old,
                     'status_new' => "Đã thanh toán",
                     "User_edit_status" => $user->name,
-                    "note" => $request->input('note',''),
+                    "note" => $request->input('note', ''),
                 ]);
             }
-             
+
             if ($OrderOld->status_order_id !== $request->input('status_order_id')) {
                 HistoryOrderStatus::create([
                     "Order_id" => $id,
@@ -126,7 +126,7 @@ class OrderRepository
                     "note" => $request->input('note') ?? "",
                 ]);
             }
-              
+
             if ($OrderOld->payment_status_id !== $request->input('payment_status_id')) {
                 HistoryPaymentStatus::create([
                     'Order_id' => $id,
@@ -136,10 +136,10 @@ class OrderRepository
                     "note" => $request->input('note') ?? "",
                 ]);
             }
-           
+
             return $this->notification->Success('GetAllOrder', "Cập nhật đơn hàng thành công");
         } catch (\Throwable $th) {
-            return redirect()->route('GetDetailOrder',$id)->with('Error', $th->getMessage());
+            return redirect()->route('GetDetailOrder', $id)->with('Error', $th->getMessage());
         }
     }
     public function GetFormAdd(Request $request)

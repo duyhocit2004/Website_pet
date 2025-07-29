@@ -91,6 +91,7 @@
                <div class="col-md-5">
                  <form action="{{route('AddCart')}}" method="post" enctype="multipart/form-data">
                    @csrf
+                   <input type="text" hidden value="{{$products['id']}}" name="id">
                    <div class="single-product-summary">
                      <div class="sisf-product-title-box">
                         <h2 class="sisf-product-title">{{$products['name']}}</h2>
@@ -472,6 +473,8 @@
                $('.price1').html(formatPrice(value.price));
                $('input[name=price]').val(value.price);
                 $('#quantity').attr('data-max',value.stock)
+              $('button').removeAttr("disabled");
+                
                currentStock = parseInt(value.stock); // gán lại biến stock
 
                validateQuantity();
@@ -481,6 +484,7 @@
             }
             if (found == false) {
                   // Nếu không tìm thấy variant phù hợp
+                  $('button').attr("disabled","disabled");
                   $('.sku').html('--');
                   $('.price1').html('--');
                   $('input[name=price]').val('');

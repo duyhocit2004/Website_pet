@@ -68,7 +68,7 @@ class CategoryRepository
     public function GetCategoryById($id)
     {
         $list = Category::findOrFail($id);
-        return view('admin.categories.EditCategory',compact('list'));
+        return view('admin.categories.EditCategory', compact('list'));
     }
     public function UpdateCategoryById(Request $request, $id)
     {
@@ -78,16 +78,16 @@ class CategoryRepository
 
             // kiểm tra giá trị đã tồn tại hay chưa
             $name = mb_strtolower($request->input('name'));
-            
-            
-                if($GetByid->name !== $name){
-                    $check = Category::whereRaw('name = ?', [$name])->exists();
-                    if ($check) {
+
+
+            if ($GetByid->name !== $name) {
+                $check = Category::whereRaw('name = ?', [$name])->exists();
+                if ($check) {
                     return $this->notification->Error('GetListCategory', " đã tồn tại");
                 }
             }
-            
-           
+
+
 
             //lưu ảnh vào phần mềm thứ 3
             if ($request->hasFile('image')) {
@@ -102,7 +102,7 @@ class CategoryRepository
             }
 
             // sửa dữ liệu
-           $GetByid->update([
+            $GetByid->update([
                 'name' => $request->input('name'),
                 'image' => $file
             ]);

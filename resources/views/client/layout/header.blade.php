@@ -101,9 +101,9 @@
                   </div>
                   <div class="user-icon mx-3">
                   
-                  @if(!auth()->check())
+                  @if(auth()->check())
                       <span class="sisf-shortcode sisf-m  sisf-icon-holder sisf-size--default sisf-layout--normal">			
-                     <a href="{{route('formLogin')}}">		
+                     <a href="">		
                      <span class="sisf-icon-dripicons dripicons-user sisf-icon sisf-e">
                      <i class="fa-regular fa-user"></i>
                      </span>			
@@ -112,7 +112,7 @@
                      
                   @else
                       <span class="sisf-shortcode sisf-m  sisf-icon-holder sisf-size--default sisf-layout--normal">			
-                     <a href="#">		
+                     <a href="{{route('formLogin')}}">		
                      <span class="sisf-icon-dripicons dripicons-user sisf-icon sisf-e">
                      <i class="fa-regular fa-user"></i>
                      </span>			

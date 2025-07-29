@@ -4,8 +4,9 @@ return [
     'Admin' => 'admin',
     'User' => 'user',
 
-    'Lock' => 'lock',
+    'lock' => 'lock',
     'active' => 'active',
+    'inactive' => 'inactive',
 
     'Main' => 'main',
     

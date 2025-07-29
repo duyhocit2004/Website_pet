@@ -225,14 +225,14 @@ class ProductRepository
                             ]);
 
                         }
-                    }else{
-                         ProductVariant::create([
-                                'product_id' => $id,
-                                'net_weight_id' => $variant['net_weight_id'] ?? null,
-                                'color_id' => $variant['color_id'] ?? null,
-                                'price' => $variant['price'],
-                                'stock' => $variant['stock'] ?? 0,
-                            ]);
+                    } else {
+                        ProductVariant::create([
+                            'product_id' => $id,
+                            'net_weight_id' => $variant['net_weight_id'] ?? null,
+                            'color_id' => $variant['color_id'] ?? null,
+                            'price' => $variant['price'],
+                            'stock' => $variant['stock'] ?? 0,
+                        ]);
                     }
 
 

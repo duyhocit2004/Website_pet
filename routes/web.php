@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\NetWeightController;
 use App\Http\Controllers\admin\OrderController;
+use App\Http\Controllers\admin\VoucherController;
 use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
 
@@ -50,8 +51,13 @@ Route::get('productDetail/{id}',[DetailProductController::class,'DetailProduct']
 Route::post('AddCart',[CartController::class,'AddCart'])->name('AddCart');
 
 
+// Route::get('')
+
+
+
+
 Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
-    Route::get('home', [homeController::class, 'index'])->name('homeAdmin');
+    Route::get('DoashBoard', [homeController::class, 'index'])->name('homeAdmin');
     Route::prefix('product')->group(function () {
         Route::get('GetAllProductPaginate', [productController::class, 'GetAllProductPaginate'])->name('GetAllProductPaginate');
         Route::get('FormAddProduct', [productController::class, 'FormAddProduct'])->name('FormAddProduct');
@@ -99,9 +105,11 @@ Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
         Route::delete('GetFormAdd/{id}', [OrderController::class, 'GetFormAdd'])->name('GetFormAdd');
     });
     Route::prefix('Voucher')->group(function (){
-        Route::get('GetAllOrder', [OrderController::class, 'GetAllOrder'])->name('GetAllOrder');
-        Route::get('GetDetailOrder/{id}', [OrderController::class, 'GetDetailOrder'])->name('GetDetailOrder');
-        Route::put('UpdateOrder/{id}', [OrderController::class, 'UpdateOrder'])->name('UpdateOrder');
-        Route::delete('GetFormAdd/{id}', [OrderController::class, 'GetFormAdd'])->name('GetFormAdd');
+        Route::get('getAllVoucher', [VoucherController::class, 'getAllVoucher'])->name('getAllVoucher');
+        Route::get('FormAddVoucher', [VoucherController::class, 'FormAddVoucher'])->name('FormAddVoucher');
+        Route::post('AddVoucher', [VoucherController::class, 'AddVoucher'])->name('AddVoucher');
+        Route::get('GetVoucherById/{id}', [VoucherController::class, 'GetVoucherById'])->name('GetVoucherById');
+        Route::put('UpdateVoucherById/{id}', [VoucherController::class, 'UpdateVoucherById'])->name('UpdateVoucherById');
+        Route::put('LockAndUnLockVoucher/{id}', [VoucherController::class, 'LockAndUnLockVoucher'])->name('LockAndUnLockVoucher');
     });
 });

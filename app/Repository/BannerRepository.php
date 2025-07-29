@@ -26,7 +26,7 @@ class BannerRepository
         $parper = 5;
         $page = $request->input('page', 1);
 
-        $List = $this->filterBanner( $request);
+        $List = $this->filterBanner($request);
         $count = $List->count();
 
         $Banner = $List->skip(($page - 1) * $parper)->take($parper)->get();
@@ -47,9 +47,9 @@ class BannerRepository
     public function AddBanner(Request $request)
     {
 
-        $CountBannerActive = Banner::where("status",config('contast.active'))->count();
-        if($CountBannerActive > 3 ){
-            return $this->notification->Error("GetAllBanner",'Trạng thái sản phẩm hoạt động được đối đa là 3');
+        $CountBannerActive = Banner::where("status", config('contast.active'))->count();
+        if ($CountBannerActive > 3) {
+            return $this->notification->Error("GetAllBanner", 'Trạng thái sản phẩm hoạt động được đối đa là 3');
         }
 
 
@@ -68,7 +68,7 @@ class BannerRepository
             "Link_product" => $request->input('Link_product'),
             'descripton' => $request->input('descripton'),
             'status' => $request->input('status'),
-            'role'=>$request->input('role')
+            'role' => $request->input('role')
         ]);
 
         if (!$tatus) {
@@ -87,9 +87,9 @@ class BannerRepository
 
         $id = Banner::findOrFail($id);
         $file = $id->Link_video;
-        $CountBannerActive = Banner::where("role",config('contast.active'))->count();
-        if($CountBannerActive > 3 ){
-            return $this->notification->Error("GetAllBanner",'Trạng thái sản phẩm hoạt động được đối đa là 3');
+        $CountBannerActive = Banner::where("role", config('contast.active'))->count();
+        if ($CountBannerActive > 3) {
+            return $this->notification->Error("GetAllBanner", 'Trạng thái sản phẩm hoạt động được đối đa là 3');
         }
 
         if (!$id) {
@@ -104,33 +104,33 @@ class BannerRepository
             }
             if ($request->file('Link_video')) {
                 $baseFile = $this->cloudinary->uploadApi()->upload($request->files('Link_video')->getRealPath(), [
-                    'resource_type' => " video"
+                    'resource_type' => "video"
                 ]);
                 $file = $baseFile['secure_url'];
             }
 
         }
-        
+
         $id->update([
             'title' => $request->input('title'),
             'descripton' => $request->input('descripton'),
             'Link_video' => $file,
-            'Link_product'=> $request->input('Link_product'),
+            'Link_product' => $request->input('Link_product'),
             'status' => $request->input('status'),
             'role' => $request->input('role')
         ]);
 
-        return $this->notification->Success("GetAllBanner",'Sửa sản phẩm thành công');
+        return $this->notification->Success("GetAllBanner", 'Sửa sản phẩm thành công');
 
     }
     public function DeleteBannerById($id)
-    {   
+    {
         $id = Banner::findOrFail($id)->delete();
-        if(!$id){
-            return $this->notification->Error('GetAllBanner','Sản phẩm không tồn tại');
+        if (!$id) {
+            return $this->notification->Error('GetAllBanner', 'Sản phẩm không tồn tại');
         }
-        return $this->notification->Success('GetAllBanner','Xóa thành công');
-        
+        return $this->notification->Success('GetAllBanner', 'Xóa thành công');
+
     }
 
     static function filterBanner(Request $request)
@@ -138,7 +138,7 @@ class BannerRepository
         $Banner = Banner::query()->orderByDesc('created_at');
         if ($request->input('role') || $request->input('status')) {
             $Banner->where('role', $request->input('role'))
-            ->orWhere('status',$request->input('status'));
+                ->orWhere('status', $request->input('status'));
         }
         return $Banner;
     }
