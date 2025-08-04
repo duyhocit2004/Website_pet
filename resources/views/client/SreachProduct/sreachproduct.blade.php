@@ -1,22 +1,22 @@
 @extends('client.index2')
 
 @section('banner')
-    <div class="sisf-banner position-relative">
-        <div class="banner-img">
-            <figure>
-                <img src="{{asset('asset/images/shop_hero_img.png')}}" alt="Pawly">
-            </figure>
+   <div class="sisf-banner position-relative">
+      <div class="banner-img">
+        <figure>
+          <img src="{{asset('asset/images/inner-page-banner_img.png')}}" alt="Pawly">
+        </figure>
+      </div>
+      <div class="sisf-page-title sisf-m sisf-title--standard sisf-alignment--center">
+        <div class="sisf-m-inner">
+          <div class="sisf-m-content sisf-content-grid ">
+            <h1 class="sisf-m-title entry-title">Cửa hàng</h1>
+          </div>
         </div>
-        <div class="sisf-page-title sisf-m sisf-title--standard sisf-alignment--center">
-            <div class="sisf-m-inner">
-                <div class="sisf-m-content sisf-content-grid ">
-                    <h1 class="sisf-m-title entry-title">Tìm kiếm sản phẩm</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
+      </div>
+   </div>
 @endsection
+
 @section('main2')
     <div class="sisf-product-list border-0 p-0">
         <div class="row" id="product">

@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Common\Notification;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserRepository
 {
@@ -130,5 +131,48 @@ class UserRepository
         } else {
             return $this->notification->Error('GetPageUser', 'tài khoản không tồn tại');
         }
+    }
+
+    public function accountUser(){
+        $user = Auth::user();
+        $AccountUser = User::Where('email',"=",$user->email)->first();
+        // dd($AccountUser);
+
+        return view('client.Account.DetailAccount',compact('AccountUser'));
+
+    }
+    public function UpdateAccountClient($id,Request $request){
+        $user = User::findOrFail($id);
+
+        if(!$user){
+            return $this->notification->Error('formLoginAdmin',"Tài khoàn không tồn tại");
+        }
+
+        $user->update([
+            'name' => $request->input('name') ,
+            'age' => $request->input('age') ?? "",
+            'address' => $request->input('address') ?? "",
+            'phone' => $request->input('phone') ?? ""
+        ]);
+
+        return redirect()->route('accountUser')->with('success',"cập nhật thông tin thành công");
+     }
+    Public function UpdatePassword(Request $request){
+        // dd($request->all());
+        
+        $user = Auth::user();
+
+        $find = User::findOrFail($user->id);
+
+        if(!$user){
+            return redirect()->route('login')->with('error',"tài khoản không tồn tại");
+        }
+        $find->update([
+            'password' => $request->password
+        ]);
+
+        return redirect()->route('accountUser')->with('success',"cập nhật mật khẩu thành công");
+        
+
     }
 }

@@ -97,13 +97,14 @@
                      <a href="#"> 
                         <i class="fa-regular fa-heart"></i>
                      </a>
-                     <span class="sisf-m-opener-count">0</span>
+                    
+                     <span class="sisf-m-opener-count"></span>
                   </div>
                   <div class="user-icon mx-3">
                   
                   @if(auth()->check())
                       <span class="sisf-shortcode sisf-m  sisf-icon-holder sisf-size--default sisf-layout--normal">			
-                     <a href="">		
+                     <a href="{{route("accountUser")}}">		
                      <span class="sisf-icon-dripicons dripicons-user sisf-icon sisf-e">
                      <i class="fa-regular fa-user"></i>
                      </span>			

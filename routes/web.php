@@ -1,16 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home1Controller;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\admin\homeController;
 use App\Http\Controllers\admin\userController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\client\CartController;
+use App\Http\Controllers\client\mainController;
 use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\productController;
+use App\Http\Controllers\admin\VoucherController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\NetWeightController;
-use App\Http\Controllers\admin\OrderController;
-use App\Http\Controllers\admin\VoucherController;
+use App\Http\Controllers\client\accountUserController;
 use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
 
@@ -24,9 +27,7 @@ use App\Http\Controllers\client\SearchProductController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('client.index');
-})->name('home');
+Route::get('/', [Home1Controller::class, 'index'])->name('home');
 Route::get('formLogin', [AuthController::class, 'formLogin'])->name('formLogin');
 Route::post('loginUser', [AuthController::class, 'login'])->name('loginUser');
 Route::get('formLoginAdmin', [AuthController::class, 'formLoginAdmin'])->name('formLoginAdmin');
@@ -46,13 +47,27 @@ Route::get('handleFacebookCallback', [AuthController::class, 'handleFacebookCall
 Route::get('redirectToBitbucket', [AuthController::class, 'redirectToBitbucket'])->name('redirectToBitbucket');
 Route::get('handleBitbucketCallback', [AuthController::class, 'handleBitbucketCallback']);
 
-Route::get('pageSreach',[SearchProductController::class,'pageSreach'])->name('pageSreach');
-Route::get('productDetail/{id}',[DetailProductController::class,'DetailProduct'])->name('DetailProduct');
-Route::post('AddCart',[CartController::class,'AddCart'])->name('AddCart');
+Route::get('pageSreach', [SearchProductController::class, 'pageSreach'])->name('pageSreach');
+Route::get('productDetail/{id}', [DetailProductController::class, 'DetailProduct'])->name('DetailProduct');
+Route::post('AddCart', [CartController::class, 'AddCart'])->name('AddCart');
 
 
-// Route::get('')
+Route::get('accountUser', [accountUserController::class, 'accountUser'])->name('accountUser');
+Route::put('UpdateAccountClient/{id}', [accountUserController::class, 'UpdateAccountClient'])->name('UpdateAccountClient');
 
+Route::get('formPassword', [accountUserController::class, 'formPassword'])->name('formPassword');
+Route::post('UpdatePassword', [accountUserController::class, 'UpdatePassword'])->name('UpdatePassword');
+
+Route::post('checkPassword', [mainController::class, 'checkPassword'])->name('checkPassword');
+
+Route::prefix('locationUser')->group(function () {
+    Route::get('getLocationUser', [accountUserController::class, 'getLocationUser'])->route('getLocationUser');
+    Route::get('FormLocation', [accountUserController::class, 'FormLocation'])->route('FormLocation');
+    Route::post('AddLocation', [accountUserController::class, 'AddLocation'])->route('AddLocation');
+    Route::get('GetLocationById/{id}', [accountUserController::class, 'GetLocationById'])->route('GetLocationById');
+    Route::put('updateLocation/{id}', [accountUserController::class, 'updateLocation'])->route('updateLocation');
+    Route::put('deleteLocation/{id}', [accountUserController::class, 'deleteLocation'])->route('deleteLocation');
+});
 
 
 
@@ -98,13 +113,13 @@ Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
         Route::put('UpdateBannerById/{id}', [BannerController::class, 'UpdateBannerById'])->name('UpdateBannerById');
         Route::delete('DeleteBannerById/{id}', [BannerController::class, 'DeleteBannerById'])->name('DeleteBannerById');
     });
-    Route::prefix('Order')->group(function (){
+    Route::prefix('Order')->group(function () {
         Route::get('GetAllOrder', [OrderController::class, 'GetAllOrder'])->name('GetAllOrder');
         Route::get('GetDetailOrder/{id}', [OrderController::class, 'GetDetailOrder'])->name('GetDetailOrder');
         Route::put('UpdateOrder/{id}', [OrderController::class, 'UpdateOrder'])->name('UpdateOrder');
         Route::delete('GetFormAdd/{id}', [OrderController::class, 'GetFormAdd'])->name('GetFormAdd');
     });
-    Route::prefix('Voucher')->group(function (){
+    Route::prefix('Voucher')->group(function () {
         Route::get('getAllVoucher', [VoucherController::class, 'getAllVoucher'])->name('getAllVoucher');
         Route::get('FormAddVoucher', [VoucherController::class, 'FormAddVoucher'])->name('FormAddVoucher');
         Route::post('AddVoucher', [VoucherController::class, 'AddVoucher'])->name('AddVoucher');

@@ -97,6 +97,7 @@ class DoashboardController extends Controller
 
     public function CountActiveUsers(){
         $CountUser = User::Where("status",config('contast.active'))
+        ->where('role','=',config('contast.User'))
         ->count();
 
         return response()->json( $CountUser);

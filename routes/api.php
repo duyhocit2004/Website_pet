@@ -18,8 +18,8 @@ use App\Http\Controllers\admin\DoashboardController;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
+
+
 
 Route::get('Allbanner',[mainController::class,'getAllproduct']);
 Route::get('GetListFeaturedProducts',[mainController::class,'GetListFeaturedProducts']);
@@ -36,10 +36,12 @@ Route::get('TotalCancelledOrders',[DoashboardController::class,'TotalCancelledOr
 
 Route::get('getRealTimeRevenue',[DoashboardController::class,'getRealTimeRevenue']);
 
+Route::post('checkPassword',[mainController::class,'checkPassword']);
+
 Route::get('CountActiveUsers',[DoashboardController::class,'CountActiveUsers']);
 Route::get('CountOrderInOneDay',[DoashboardController::class,'CountOrderInOneDay']);
 
-Route::get('check-timezone', function () { 
+Route::get('check-timezone', function () {
     return response()->json([
         'Laravel config timezone' => config('app.timezone'),
         'PHP default timezone' => date_default_timezone_get(),

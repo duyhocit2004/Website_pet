@@ -1,8 +1,7 @@
 
 
-document.addEventListener('DOMContentLoaded',()=>{
+const autoLoad =document.addEventListener('DOMContentLoaded',()=>{
     RenderChart();
-    setInterval(RenderChart, 60000)
     Foreach();
 })
 
@@ -23,7 +22,7 @@ function renderDoashboard(api,documentId){
         if(!res){
             return new Error("lỗi")
         }
-        
+
         return res.json();
     }).then(respon =>{
         console.log(respon);
@@ -41,19 +40,19 @@ function renderDoashboard(api,documentId){
 
 async function RenderChart(){
     const Url = 'http://127.0.0.1:8000/api/getRealTimeRevenue';
-    
+
     let chart;
     try {
         const data = await fetch(Url);
         const res = await data.json();
 
-        
+
 
         const label = res.map(item => item.time);
         const total = res.map(item =>item.total);
         console.log(label,total)
         const ctx = document.getElementById('myChart');
-        
+
         if(chart){
             chart.destroy();
         }
@@ -79,13 +78,14 @@ async function RenderChart(){
 
 
             }
-            
+
         })
 
    console.log(chart);
     } catch (error) {
         console.log(error);
     }
-    
-    
+
+
 }
+setInterval(autoLoad, 60000)

@@ -68,7 +68,7 @@ class AuthService implements IAuthService{
 
     public function logout()
     {
-        $this->AuthRepository->logout();
+       return $this->AuthRepository->logout();
     }
 
     public function ForgotPassword($request){

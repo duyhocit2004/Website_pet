@@ -71,7 +71,7 @@
                                             <use
                                                 href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Login">
                                             </use>
-                                        </svg><a class="ms-2" href="login.html">Log Out</a>
+                                        </svg><a class="ms-2" href="{{route('logout')}}">Log Out</a>
                                     </li>
                                 </ul>
                             </div>

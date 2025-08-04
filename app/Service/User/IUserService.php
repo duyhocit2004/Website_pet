@@ -16,7 +16,7 @@ interface IUserService
 
     public function UpdateAccount(Request $request,$id);
 
-    
-    
+    public function accountUser();
+    public function UpdateAccountClient($id,Request $request);
 
 }

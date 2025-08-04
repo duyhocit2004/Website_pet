@@ -77,12 +77,23 @@ class AuthRepository
     public function logout()
     {
         $user = Auth::user();
+
+        if(!$user){
+             return redirect()->route('formLogin')->with('success', 'Bạn đã đăng xuất thành công');
+        }
         $findUser = User::where('email', $user->email)->first();
+
+        
         $findUser->update([
             'status' => config('contast.inactive')
         ]);
-        Auth::logout();
-        return redirect()->route('home')->with('success', 'Bạn đã đăng xuất thành công');
+
+        if ($findUser->role == config('contast.Admin')) {
+            return redirect()->route('formLoginAdmin')->with('success', 'Bạn đã đăng xuất thành công');
+        } else {
+            return redirect()->route('formLogin')->with('success', 'Bạn đã đăng xuất thành công');
+        }
+
     }
     public function ForgotPassword($request)
     {
