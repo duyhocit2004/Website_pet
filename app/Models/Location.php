@@ -9,12 +9,22 @@ class Location extends Model
 {
     use HasFactory;
 
-    protected $table = 'location';
+    protected $table = "location";
     protected $fillable = [
-        'product_id',
-        'location_name',
-        'location_address',
-        'location_type',
-        'location_phone'
+        'user_id',
+        'province_code',
+        'province_name',
+        'district_code',
+        'district_name',
+        'ward_code',
+        'ward_name',
+        'phone',
+        'location_detail',
+        'is_default',
+        'name',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

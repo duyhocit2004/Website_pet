@@ -29,12 +29,22 @@ class accountUserController extends Controller
     Public function UpdatePassword(Request $request){
         return $this->UserService->UpdatePassword($request);
     }
-    public function getLocationUser (){}
-    public function FormLocation (){}
-    public function AddLocation (Request $request){}
-    public function GetLocationById ($id){}
-    public function updateLocation (Request $request,$id){}
-    public function deleteLocation ($id){}
+    public function getLocationUser (){
+        return $this->UserService->getLocationUser();
+    }
+
+    public function AddLocation (Request $request){
+        return $this->UserService->AddLocation($request);
+    }
+    public function GetLocationById ($id){
+        return $this->UserService->GetLocationById($id);
+    }
+    public function updateLocation (Request $request,$id){
+        return $this->UserService->updateLocation($request,$id);
+    }
+    public function deleteLocation ($id){
+            return $this->UserService->deleteLocation($id);
+    }
 
 }
 

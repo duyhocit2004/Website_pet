@@ -61,12 +61,12 @@ Route::post('UpdatePassword', [accountUserController::class, 'UpdatePassword'])-
 Route::post('checkPassword', [mainController::class, 'checkPassword'])->name('checkPassword');
 
 Route::prefix('locationUser')->group(function () {
-    Route::get('getLocationUser', [accountUserController::class, 'getLocationUser'])->route('getLocationUser');
-    Route::get('FormLocation', [accountUserController::class, 'FormLocation'])->route('FormLocation');
-    Route::post('AddLocation', [accountUserController::class, 'AddLocation'])->route('AddLocation');
-    Route::get('GetLocationById/{id}', [accountUserController::class, 'GetLocationById'])->route('GetLocationById');
-    Route::put('updateLocation/{id}', [accountUserController::class, 'updateLocation'])->route('updateLocation');
-    Route::put('deleteLocation/{id}', [accountUserController::class, 'deleteLocation'])->route('deleteLocation');
+    Route::get('getLocationUser', [accountUserController::class, 'getLocationUser'])->name('getLocationUser');
+    Route::post('AddLocation', [accountUserController::class, 'AddLocation'])->name('AddLocation');
+    Route::get('GetLocationById/{id}', [accountUserController::class, 'GetLocationById'])->name('GetLocationById');
+    Route::put('updateLocation/{id}', [accountUserController::class, 'updateLocation'])->name('updateLocation');
+    Route::delete('deleteLocation/{id}', [accountUserController::class, 'deleteLocation'])->name('deleteLocation');
+
 });
 
 

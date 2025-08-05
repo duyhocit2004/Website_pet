@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
        @include('client.layout.head')
+       
 </head>
 <body>
     @include('client.layout.header')

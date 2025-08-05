@@ -18,5 +18,11 @@ interface IUserService
 
     public function accountUser();
     public function UpdateAccountClient($id,Request $request);
+    public function getLocationUser ();
+
+    public function AddLocation (Request $request);
+    public function GetLocationById ($id);
+    public function updateLocation (Request $request,$id);
+    public function deleteLocation ($id);
 
 }

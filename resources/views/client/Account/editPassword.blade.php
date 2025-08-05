@@ -32,7 +32,7 @@
                                         <a href="orders.html">Đơn hàng</a>
                                     </li>
                                     <li class="myaccount-navigation-link myaccount-navigation-link-edit-address">
-                                        <a href="edit-address.html">Địa chỉ</a>
+                                        <a href="{{route('getLocationUser')}}">Địa chỉ</a>
                                     </li>
                                     <li class="myaccount-navigation-link myaccount-navigation-link-edit-account">
                                         <a href="{{route('accountUser')}}">Thông tin </a>
