@@ -45,3 +45,29 @@
       </script>
         <script  src="{{asset('JSClient/JSBanner.js')}}"></script>
       @yield('js')
+       <script>
+           
+      renderLoad("{{ route('CountListWishList') }}")
+
+      async function renderLoad(url){
+      //   console.log("hi")
+        try {
+         const res = await fetch(url,{
+              headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+         });
+         const data = await res.json();
+         
+          console.log(data);
+
+         document.getElementById('CountCart').innerHTML = data.data.CountCart;
+         document.getElementById('CountHeart').innerHTML = data.data.CountWhishList;
+
+        } catch (error) {
+            console.log("lỗi" + error)
+            new Error("lỗi" + error)
+        }
+      }
+   </script>
+      

@@ -4,11 +4,11 @@
                <div class="row  gallery-items page-gallery-box">
                   <!-- Footer Subscribe Start --> 
                   <div class="col-md-6 ms-auto me-auto">
-                     <h5 class="text-white text-center">Subscribe now to FOR updates and exclusive offers!</h5>
+                     <h5 class="text-white text-center">ĐĂNG KÝ NGAY ĐỂ NHẬN THÔNG TIN CẬP NHẬT VÀ ƯU ĐÃI ĐỘC QUYỀN!</h5>
                      <div class="subscription-container text-center mt-4">
                         <form class="d-flex justify-content-center align-items-center">
-                           <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
-                           <button type="submit" class="btn btn-link ms-2">SUBSCRIBE</button>
+                           <input type="email" class="form-control" placeholder="Your email" aria-label="email của bạn">
+                           <button type="submit" class="btn btn-link ms-2">Đăng ký</button>
                         </form>
                      </div>
                   </div>
@@ -22,11 +22,11 @@
                   <div class="col-lg-4 col-12">
                      <div class="footer-logo">
                         <a href="index.html">
-                        <img src="images/pawly_logo.png" alt="Pawly">
+                        <img src="{{asset('asset/images/pawly_logo.png')}}" alt="Pawly">
                         </a>
                      </div>
                      <div class="text">
-                        <p>Our ancestral legacy is a tapestry woven with the threads of tradition, culture, knowledge, and values. It is a treasure trove of stories, customs, and achievements.</p>
+                        <p>Di sản tổ tiên của chúng ta là một tấm thảm dệt bằng những sợi chỉ của truyền thống, văn hóa, kiến thức và giá trị. Đó là một kho tàng những câu chuyện, phong tục và thành tựu.</p>
                      </div>
                      <!-- Footer Social Link Start -->
                      <div class="footer-social-links">

@@ -30,4 +30,7 @@ class ProductVariant extends Model
     {
         return $this->belongsTo(NetWeight::class);
     }
+    public function CartDetail(){
+        return $this->hasMany(CartDetail::class,'product_vartiant_id','id');
+    }
 }

@@ -49,13 +49,13 @@
                <div class="header-icon d-flex align-items-center">
                   <div class="sis_core_woo_dropdown_cart me-3">
                      <div class="sisf-dropdown-cart-inner">
-                        <a href="cart.html" class="sisf-m-opener">
+                        <a href="{{route('GetCartUser')}}" class="sisf-m-opener">
                         <span class="sisf-m-opener-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
                         </span>
-                        <span class="sisf-m-opener-count">2</span>
+                        <span class="sisf-m-opener-count" id="CountCart">0</span>
                         </a>
-                        <div class="sisf-dropdown-cart-content">
+                        {{-- <div class="sisf-dropdown-cart-content">
                            <p class="sisf-m-posts-not-found d-none">No products in the cart.</p>
                            <ul class="sisf-mini-cart">
                               <li class="sisf-mini-cart-item d-flex align-items-center">
@@ -90,15 +90,15 @@
                               <a href="cart.html" class="btn-default">View Cart</a>
                               <a href="checkout.html" class="btn-default btn-default-rev">Checkout</a>
                            </div>
-                        </div>
+                        </div> --}}
                      </div>
                   </div>
                   <div class="header-favorite-icon mx-3">
-                     <a href="#"> 
+                     <a href="{{route('GetListWishList')}}"> 
                         <i class="fa-regular fa-heart"></i>
                      </a>
                     
-                     <span class="sisf-m-opener-count"></span>
+                     <span class="sisf-m-opener-count" id="CountHeart">0</span>
                   </div>
                   <div class="user-icon mx-3">
                   
@@ -138,3 +138,6 @@
             <div class="responsive-menu"></div>
          </div>
       </header>
+@section('js')
+   
+@endsection

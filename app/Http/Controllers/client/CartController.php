@@ -19,7 +19,13 @@ class CartController extends Controller
         // dd($request->id);
         return $this->CartService->AddCart($request);
     }
+    public function GetCartUser(){
+        return $this->CartService->GetCartUser();
+    }
 
+    public function DeleteCartUser($id){
+        return $this->CartService->DeleteCartUser($id);
+    }
     // public function buyNow(Request $request){
     //     return $this->CartService->buyNow($request);
     // }

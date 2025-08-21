@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Home1Controller extends Controller
 {
@@ -11,9 +13,31 @@ class Home1Controller extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $NewProduct = Product::query()
+        ->select('product.*',DB::raw('max(product_vartiant.price) as PriceMax'),DB::raw('min(product_vartiant.price) as PriceMin'))
+        ->join('product_vartiant','product.id','=','product_vartiant.product_id')
+        ->groupBy('product.id')
+        ->orderBy('rating','desc')
+        ->where('status','appear')
+        ->take(12)
+        ->get();
+
+        $Seller =  Product::query()
+        ->select('product.*',DB::raw('max(product_vartiant.price) as PriceMax'),DB::raw('min(product_vartiant.price) as PriceMin'))
+        ->join('product_vartiant','product.id','=','product_vartiant.product_id')
+        ->groupBy('product.id')
+        ->orderBy('discount','desc')
+        ->where('status','appear')
+        ->take(12)
+        ->get();
+
+        // dd($Seller );
+        return view('client.index',compact(['NewProduct','Seller']));
     }
 
+    public function AboutUs(){
+        return view('client.AboutUs.AboutUs');
+    }
     /**
      * Show the form for creating a new resource.
      */

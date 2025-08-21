@@ -18,6 +18,21 @@ class CartRepository
         $this->notification = $notification;
     }
 
+    public function GetCartUser(){
+        $user = Auth::user();
+
+        if(!$user){
+            return $this->notification->Error('formLogin','Vui lòng đăng nhập');
+        }
+
+        $product = CartDetail::whereHas('cart',function ($query) use ($user){
+            $query->where('user_id',$user->id);
+        })
+        ->with('ProductVariant','Product')
+        ->get();
+        
+        return view('client.cart.cart',compact('product'));
+    }
 
     public function AddCart(Request $request)
     {
@@ -77,5 +92,8 @@ class CartRepository
         }
 
         return redirect()->route('DetailProduct', $request->id)->with('success', "Cập nhật giỏ hàng thành công");
+    }
+    public function DeleteCartUser($id){
+        
     }
 }

@@ -113,13 +113,15 @@ class CategoryRepository
     }
     public function DeleteCategory($id)
     {
-        $cate = Category::findOrFail($id);
-        if ($cate) {
-            $cate->delete();
-            return $this->notification->Success('GetListCategory', 'xóa thành công');
-        } else {
-            return $this->notification->Error('GetListCategory', 'xóa Thể loại thất bại');
-        }
+
+        $cate = Category::find($id);
+
+        if (!$cate) {
+           return $this->notification->Error('GetListCategory', 'xóa Thể loại thất bại hoac the loai khong ton tai');
+        } 
+         $cate->delete();
+        return $this->notification->Success('GetListCategory', 'xóa thành công');
+        
 
 
     }

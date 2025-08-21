@@ -12,4 +12,10 @@ class Cart implements ICart {
     public function AddCart(Request $request){
        return $this->CartRepository->AddCart($request);
     }
+    public function GetCartUser(){
+        return $this->CartRepository->GetCartUser();
+    }
+    public function DeleteCartUser($id){
+        return $this->CartRepository->DeleteCartUser($id);
+    }
 }

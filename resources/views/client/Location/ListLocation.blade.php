@@ -34,7 +34,7 @@
             z-index: 200;
             background-color: rgba(0, 0, 0, 0.39);
             width: 100%;
-            height: 80%;
+            height: 100%;
             display: none;
 
         }

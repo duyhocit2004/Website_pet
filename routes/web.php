@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\whishList;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home1Controller;
 use App\Http\Controllers\auth\AuthController;
@@ -13,7 +14,9 @@ use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\VoucherController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\NetWeightController;
+use App\Http\Controllers\client\WhishListController;
 use App\Http\Controllers\client\accountUserController;
+use App\Http\Controllers\client\OrderClientController;
 use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
 
@@ -49,7 +52,9 @@ Route::get('handleBitbucketCallback', [AuthController::class, 'handleBitbucketCa
 
 Route::get('pageSreach', [SearchProductController::class, 'pageSreach'])->name('pageSreach');
 Route::get('productDetail/{id}', [DetailProductController::class, 'DetailProduct'])->name('DetailProduct');
+
 Route::post('AddCart', [CartController::class, 'AddCart'])->name('AddCart');
+Route::get('GetCartUser', [CartController::class, 'GetCartUser'])->name('GetCartUser');
 
 
 Route::get('accountUser', [accountUserController::class, 'accountUser'])->name('accountUser');
@@ -69,7 +74,14 @@ Route::prefix('locationUser')->group(function () {
 
 });
 
+Route::get('updateWhishList/{id}',[WhishListController::class,'updateWhishList'])->name('updateWhishList');
+Route::get('GetListWishList',[WhishListController::class,'GetListWishList'])->name('GetListWishList');
+Route::get('CountListWishList',[WhishListController::class,'CountListWishList'])->name('CountListWishList');
 
+Route::post('renderOrder',[OrderClientController::class,'renderOrder'])->name('renderOrder');
+
+
+Route::get('AboutUs', [Home1Controller::class, 'AboutUs'])->name('AboutUs');
 
 Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
     Route::get('DoashBoard', [homeController::class, 'index'])->name('homeAdmin');

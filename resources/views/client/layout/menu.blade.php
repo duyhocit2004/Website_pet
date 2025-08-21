@@ -2,7 +2,7 @@
                      <div class="nav-menu-wrapper">
                         <ul class="navbar-nav mr-auto" id="menu">
                            <li class="nav-item submenu" style="margin-right: 20px;">
-                              <a class="nav-link" href="index.html">Trang chủ</a>
+                              <a class="nav-link" href="{{route('home')}}">Trang chủ</a>
                            </li>
                            <li class="nav-item submenu">
                               <a class="nav-link" href="#">Pages<i class="fas fa-chevron-down custom-toggle-icon px-3"></i></a>
@@ -35,7 +35,7 @@
                                  </li>
                                  <li class="nav-item">
                                     <h5 class="sisf-menu-title">Shop Pages</h5>
-                                    <a class="nav-link" href="cart.html">Cart</a>
+                                    <a class="nav-link" href="">Cart</a>
                                     <a class="nav-link" href="checkout.html">Checkout</a>
                                     <a class="nav-link" href="my-account.html">My account</a>
                                     <a class="nav-link" href="wishlist.html">Wishlist</a>
@@ -63,8 +63,7 @@
                                  </li>
                               </ul>
                            </li>
-                           <li class="nav-item submenu" style="margin-right: 20px;"><a class="nav-link" href="landing.html">Landing</a></li>
-                           <li class="nav-item submenu"><a class="nav-link" href="landing.html">Về chúng tôi</a></li>
+                           <li class="nav-item submenu"><a class="nav-link" href="{{route('AboutUs')}}">Về chúng tôi</a></li>
                         </ul>
                      </div>
                   </div>
