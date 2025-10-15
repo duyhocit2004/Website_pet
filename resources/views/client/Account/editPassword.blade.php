@@ -29,7 +29,7 @@
                             <div class="myaccount-navigation">
                                 <ul class="list-unstyled">
                                     <li class="myaccount-navigation-link myaccount-navigation-link-orders">
-                                        <a href="orders.html">Đơn hàng</a>
+                                        <a href="{{route('GetListOrderUser')}}">Đơn hàng</a>
                                     </li>
                                     <li class="myaccount-navigation-link myaccount-navigation-link-edit-address">
                                         <a href="{{route('getLocationUser')}}">Địa chỉ</a>

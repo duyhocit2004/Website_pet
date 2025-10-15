@@ -13,12 +13,14 @@ use App\Http\Controllers\admin\BannerController;
 use App\Http\Controllers\admin\productController;
 use App\Http\Controllers\admin\VoucherController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\client\PaymentController;
 use App\Http\Controllers\admin\NetWeightController;
 use App\Http\Controllers\client\WhishListController;
 use App\Http\Controllers\client\accountUserController;
 use App\Http\Controllers\client\OrderClientController;
 use App\Http\Controllers\client\DetailProductController;
 use App\Http\Controllers\client\SearchProductController;
+use App\Http\Controllers\client\VoucherClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,9 +81,20 @@ Route::get('GetListWishList',[WhishListController::class,'GetListWishList'])->na
 Route::get('CountListWishList',[WhishListController::class,'CountListWishList'])->name('CountListWishList');
 
 Route::post('renderOrder',[OrderClientController::class,'renderOrder'])->name('renderOrder');
+Route::post('AddOrder',[OrderClientController::class,'AddOrder'])->name('AddOrder');
 
+Route::get('GetListOrderUser',[OrderClientController::class,'GetListOrderUser'])->name('GetListOrderUser');
+Route::get('GetDetailOrderUser',[OrderClientController::class,'GetDetailOrderUser'])->name('GetDetailOrderUser');
+
+Route::get('checkVoucherUser',[VoucherClientController::class,'checkVoucherUser'])->name('checkVoucherUser');
 
 Route::get('AboutUs', [Home1Controller::class, 'AboutUs'])->name('AboutUs');
+
+Route::get('/payment/create/{order_id}', [PaymentController::class, 'createPayment'])->name('payment.create');
+Route::get('/payment/return', [PaymentController::class, 'paymentReturn'])->name('payment.return');
+
+
+
 
 Route::prefix('admin')->middleware(['auth.admin'])->group(function () {
     Route::get('DoashBoard', [homeController::class, 'index'])->name('homeAdmin');

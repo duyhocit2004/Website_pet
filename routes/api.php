@@ -4,8 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\mainController;
 use App\Http\Controllers\API\AllVariantController;
-use App\Http\Controllers\client\SearchProductController;
+use App\Http\Controllers\client\VoucherController;
 use App\Http\Controllers\admin\DoashboardController;
+use App\Http\Controllers\client\SearchProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::post('checkPassword',[mainController::class,'checkPassword']);
 
 Route::get('CountActiveUsers',[DoashboardController::class,'CountActiveUsers']);
 Route::get('CountOrderInOneDay',[DoashboardController::class,'CountOrderInOneDay']);
+
 
 Route::get('check-timezone', function () {
     return response()->json([

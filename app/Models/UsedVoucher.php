@@ -20,4 +20,7 @@ class UsedVoucher extends Model
     public function Voucher(){
         return $this->belongsTo(Voucher::class,"user_id","id");
     }
+    public function user(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

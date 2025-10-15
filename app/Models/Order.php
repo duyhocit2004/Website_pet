@@ -28,7 +28,8 @@ class Order extends Model
         'payment_status_id',
         'status',
         'created_at',
-        'status_order_id'
+        'status_order_id',
+        'Location_detail'
     ];
 
     public function PaymentMethod(){

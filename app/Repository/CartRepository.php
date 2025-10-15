@@ -64,6 +64,10 @@ class CartRepository
                 ->Where("net_weight_id", $request->weight)
                 ->value('id');
 
+             $priceProductVariant = ProductVariant::query()->where("color_id", $request->color)
+                ->Where("net_weight_id", $request->weight)
+                ->value('price');
+
             $search = CartDetail::Where("cart_id", $CartUser->id)
                 ->where("product_id", $request->id)
                 ->where('product_vartiant_id', $idProductVariant)
@@ -83,7 +87,7 @@ class CartRepository
             } else {
                 $search->update([
                     "quantity" => $search->quantity + $request->quantity,
-                    "price" => $request->price * ($search->quantity + $request->quantity)
+                    "price" => $search->price * ($search->quantity + $request->quantity)
                 ]);
                 return redirect()->route('DetailProduct', $request->id)->with('success', "Cập nhật giỏ hàng thành công");
             }

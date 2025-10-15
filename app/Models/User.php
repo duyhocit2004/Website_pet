@@ -54,4 +54,7 @@ class User extends Authenticatable
     public function Location(){
         return $this->hasMany(Location::class,'user_id','id');
     }
+    public function Voucher(){
+        return $this->hasMany(UsedVoucher::class,'user_id','id');
+    }
 }

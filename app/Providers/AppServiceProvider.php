@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(INetWeight::class,NetWeight::class);
         $this->app->bind(ICategoryService::class , CategoryService::class);
         $this->app->bind(ISearchProductService::class,SearchProduct::class);
-        // $this->app->bind(IClientService::class,ClientService::class);
+        $this->app->bind(IClientService::class,ClientService::class);
         $this->app->bind(IOrderService::class,OrderService::class);
     }   
 
