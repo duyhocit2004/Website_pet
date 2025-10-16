@@ -124,14 +124,7 @@
                     
                      
                   </div>
-                  <div class="sisf-icon-list-item ms-3">
-                     <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search...">
-                        <button class="search-btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                     </div>
-                  </div>
+
                </div>
             </div>
             <div class="navbar-toggle"></div>
